@@ -61,3 +61,4 @@ Route::post('batch_student','GroupController@batch_student')->name('batch_studen
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
