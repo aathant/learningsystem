@@ -162,4 +162,16 @@ class StudentController extends Controller
     {
         //
     }
+    public function show_student($value='')
+    {
+        $batch=request('id');
+        //dd($batch);
+        $student=Student::where('batch_id','=',$batch)
+                        ->get();
+
+
+        // dd($student);
+                        //dd($student);
+        return $student;
+    }
 }

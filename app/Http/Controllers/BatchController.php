@@ -5,9 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Course;
 use App\Batch;
+use App\Student;
 
 class BatchController extends Controller
 {
+    public function show_batch($value='')
+    {
+        $course=request('id');
+        //dd($batch);
+        $batch=Batch::where('course_id','=',$course)
+                        ->get();
+                        // dd($batch);
+        return $batch;
+    }
+    
     /**
      * Display a listing of the resource.
      *

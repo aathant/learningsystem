@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Trainer;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('backend.dashboard');
+        $trainers=Trainer::All();
+        return view('frontend.sub_home',compact('trainers'));
     }
 }

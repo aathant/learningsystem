@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>SB Admin 2 - Dashboard</title>
 
@@ -400,10 +401,19 @@
   <!-- Page level plugins -->
   <script src="{{ asset('sb_admin/vendor/chart.js/Chart.min.js')}}"></script>
 
+
   <!-- Page level custom scripts -->
   <script src="{{ asset('sb_admin/js/demo/chart-area-demo.js')}}"></script>
   <script src="{{ asset('sb_admin/js/demo/chart-pie-demo.js')}}"></script>
+<!-- ajax -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
+  @yield('script')
+  
+  
 </body>
 
 </html>
