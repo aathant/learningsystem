@@ -9,13 +9,13 @@
 				<thead>
 					<tr>
 						<th>No</th>
-						<th>Name</th>
+						<th>Name</th> 
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
 					@php $i=1; @endphp
-					@foreach($group as $row)
+					@foreach($groups as $row)
 					<tr>
 						<td>{{$i++}}</td>
 						<td>{{$row->name}}</td>

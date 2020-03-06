@@ -4,14 +4,14 @@
 	<h2>Create Groups</h2>
 	<div class="row">
 		<div class="col-md-12">
-			<form action="{{route('groups.store')}}" method="POST" enctype="multipart/form-data">
+			<form action="{{route('groups.store')}}" method="POST">
 		@csrf
 
 		<div class="form-group row">
 			<div class="col-6">
 				<label class="col-sm-12 col-form-label">Student Course</label>
 				
-				<select name="course" class="form-control select1">
+				<select name="course" class="form-control dynamic" id="course" data-dependent="batch">
 				@foreach($courses as $row)
 					<option value="{{$row->id}}">{{$row->name}}</option>
 				@endforeach
@@ -19,32 +19,44 @@
 
 			</div>
 
-			<div class="col-6">
+			<div class="col-6" id="batchold">
 				<label class="col-sm-12 col-form-label">Student Batch</label>
 				
-				<select name="course" class="form-control select2">
+				<select name="batch" class="form-control dynamic " id="batch"data-dependent="student" disabled="disabled">
 					@foreach($batches as $row)
-					<option value="{{$row->id}}" id="select2">{{$row->title}}</option>
+					<option value="{{$row->id}}">{{$row->title}}</option>
 					@endforeach
+				</select>
+
+			</div>
+			<div class="col-6" id="new">
+				<label class="col-sm-12 col-form-label">Student Batch</label>			
+				<select name="batch" class="form-control student" data-dependent="student" id="batchnew">
+
 				</select>
 			</div>
 		</div>
 
 		<div class="form-group row">
 			<div class="col-6">
-				<label class="col-sm-12 col-form-label" for="inputName">Group Name</label>
-			
+				<label class="col-sm-12 col-form-label" for="inputName">Group Name
+				</label>
 				<input type="text" class="form-control" id="inputName" name="groupname">
 			</div>
 
-			<div class="col-6">
+			<div class="col-6" id="oldstudent">
 				<label class="col-sm-12 col-form-label">Choose Students</label>
-				
-				<select name="student" class="form-control select3">
-				@foreach($students as $row)
-					<option value="{{$row->id}}">{{$row->namee}}</option>
-				@endforeach
-				</select>
+				<select class="js-example-basic-multiple form-control" name="states[]" id="student" multiple="multiple" disabled="disabled">
+				  @foreach($students as $student)			  
+					<option value="{{$student->id}}">{{$student->user->name}}</option>
+				  @endforeach
+				</select>		
+			</div>
+			<div class="col-6" id="newstu">
+				<label class="col-sm-12 col-form-label">Choose Students</label>
+				<select class="js-example-basic-multiple form-control" name="states[]" id="newstudent" multiple="multiple">
+				 
+				</select>		
 			</div>
 		</div>
 
@@ -56,46 +68,82 @@
 
 	</div>
 </div>
+
+
 @endsection
 
 @section('script')
 
+
 <script type="text/javascript">
-	$(document).ready(function(){
-		$.ajaxSetup({
-    		headers: {
-        		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+$(document).ready(function() {
+	$('#batchnew').hide();
+	$('#new').hide();
+	$('#newstudent').hide();
+	$('#newstu').hide();
+	
+    $('.js-example-basic-multiple').select2();
+
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
+});
 
-	});
+    $('.dynamic').change(function()
+    {
+    	var id=$(this).val();
+    	$.post("/show_batch",{id:id},function(res)
+    	{
+    		$('#batch').prop('disabled',false);
+    		var html='';
+    		$.each(res,function(i,v)
+    		{
+    			// console.log(v.title);
+    			var id=v.id;
+    			var title=v.title;
+    			//console.log(title);
+    			
+    			html+=`<option value="${id}">${title}</option>`;
+				
+    		})
+    		$('#batchold').hide();
+    		$('#batchnew').html(html);
+    		$('#batchnew').show();
+    		$('#new').show();
 
-		$('.select1').change(function(){
-			var id=$(this).val();
-			 //alert(id);
-			$.post("{{route('course_batch')}}",{id:id},function(res){
-			  //console.log(res);
-			  $.each(res,function(i,v){
+    	})
+    });
 
-			  	$( ".select2 option:selected" ).text(v.title);
-			  })
-			
-			
-			 })
-		});
+    $('.student').change(function()
+    {
+    	var id=$(this).val();
+    	 console.log(id);
+    	$.post("/show_student",{id:id},function(res)
+    	{
 
-		$('.select2').change(function(){
-			var id=$(this).val();
-			 // alert(id);
-			$.post("{{route('batch_student')}}",{id:id},function(res){
-			//console.log(res);
-			 $.each(res,function(i,v){
+    		console.log(res);
+    		$('#student').prop('disabled',false);
+    		var html=``;
+    		$.each(res,function(i,v)
+    		{
+    			 console.log(v);
+    			var id=v.id;
+    			var user=v.namem;
 
-			  	$( ".select3 option:selected" ).text(v.namee);
-			 })
-			
-			
-			})
-		})
-	})
+    			html+=`<option value="${id}">${user}</option>`;
+    		})
+    		$('#oldstudent').hide();
+    		$('#newstudent').html(html);
+    		$('#newstu').show();
+    		
+    		$('#newstudent').show();
+    	})
+
+
+    })
+});
+
 </script>
 @endsection

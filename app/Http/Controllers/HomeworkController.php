@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Group;
-use App\Course;
+use App\Homework;
+use App\Trainer;
 use App\Student;
-use App\Batch;
-use DB;
-use Illuminate\Support\Facades\URL;
-class GroupController extends Controller
+
+class HomeworkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +16,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups=Group::all();
-        return view('backend.groups.index',compact('groups'));
+        return view('backend.homeworks.index');
     }
 
     /**
@@ -28,13 +25,10 @@ class GroupController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-         $batches=Batch::all();
-         $courses=Course::all();
-         $students=Student::all();
-         // dd($students);
-        return view('backend.groups.create',compact('courses','students','batches'));
-
+    {
+        $trainer=Trainer::All();
+        $student=Student::All();
+        return view('backend.homeworks.create');
     }
 
     /**
@@ -45,7 +39,28 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation //2
+        $request->validate([
+            "question"=>'required|min:5|max:191',
+            "marks"=>'required',
+            "trainer_id"=>'required',
+            "start_time"=>'required',
+            "end_time"=>'required',
+        ]);
+
+        //Store Data //4
+        $homoework=new Homework;
+        $homoework->name = request('name');
+        $homoework->logo = $path;
+        $homoework->outline= request('outlines');
+        $course->fees = request('fees');
+        $course->during = request('during') ;
+        $course->duration = request('duration');
+
+         $course->save();//data INsert
+
+        //Return redirect//5
+         return redirect()->route('courses.index');
     }
 
     /**
@@ -56,7 +71,7 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        return view('backend.groups.show');
+        //
     }
 
     /**
@@ -67,7 +82,7 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-       return view('backend.groups.edit');
+        //
     }
 
     /**
@@ -91,19 +106,5 @@ class GroupController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function course_batch(Request $request)
-    {
-        $id=request('id');
-        $batches=Batch::where('course_id',$id)->get();
-        return $batches;
-    }
-
-     public function batch_student(Request $request)
-    {
-        $id=request('id');
-        $students=Student::where('batche_id',$id)->get();
-        return $students;
     }
 }

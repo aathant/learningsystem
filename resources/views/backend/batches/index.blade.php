@@ -28,7 +28,7 @@
 				<td>{{$row->course->name}}</td>
 				<td>
 					<a href="{{route('batches.edit',$row->id)}}" class="btn btn-warning float-left"><i class="fas fa-edit"></i></a>
-					<form method="post" action="{{route('batches.destroy',$row->id)}}" onsubmit="return confirm('Are You Sure to Delete?')">
+					<form method="post" class="float-right" action="{{route('batches.destroy',$row->id)}}" onsubmit="return confirm('Are You Sure to Delete?')">
 						@csrf
 						@method('DELETE')
 						<button class="btn btn-danger" type="submit">

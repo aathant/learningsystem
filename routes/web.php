@@ -60,6 +60,8 @@ Route::resource('mentors','MentorController');
 
 Route::resource('groups','GroupController');
 
+Route::resource('homeworks','HomeController');
+
 Route::post('course_batch','GroupController@course_batch')->name('course_batch');
 
 Route::post('batch_student','GroupController@batch_student')->name('batch_student');
@@ -69,3 +71,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/show_batch','BatchController@show_batch')->name('show_batch');
+Route::post('/show_student','StudentController@show_student')->name('show_student');
+
+
+
