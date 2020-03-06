@@ -17,6 +17,12 @@ Route::get('/subject','FrontendController@subject_home')->name('subject');
 Route::get('/detail_subject/{id}','FrontendController@Subject')->name('detail_subject');
 
 Route::get('/student','FrontendController@register')->name('frontendregister');
+
+Route::get('/group',function(){
+	return view('frontend.group');
+});
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });

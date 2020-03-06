@@ -39,4 +39,12 @@ class FrontendController extends Controller
         
         return view('frontend.subject_link',compact('subjects'));
     }
+
+
+    public function group_communication($value='')
+    {
+        # code...
+        $posts=Subject::All();
+        return view('frontend.group',compact('posts'));
+    }
 }

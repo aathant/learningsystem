@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Subject_Home</title>
+
+  <link rel="stylesheet" type="text/css" href="{{asset('frontend/style.css')}}">
+
 	<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.min.css')}}">
 
 	<script type="text/javascript" src="{{asset('frontend/js/jquery.min.js')}}"></script>
@@ -13,33 +16,43 @@
 	<script type="text/javascript" src="{{asset('frontend/custom.js')}}"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-info" >
-  <a class="navbar-brand text-white" href="#">Student's Name</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
-      <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
-      <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
-    </div>
-  </div>
-</nav>
-<div class="container-fluid my-5">
-  <div class="row">
-    <div class="col-lg-12 card text-center">
-      <h2>Hello Bootcamper!</h2> 
-        Here are PPT of Subjects! Let Download.....
+<div id="subject_link">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand text-white" href="#">Student's Name</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
+          <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
+          <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
+        </div>
+      </div>
+    </nav>
 
+    <div class="container" style="padding-top: 200px;">
+      <div class="row justify-content-center text-center">
+        <div class="col-10">
+          <h3 class="text-white font">Welcome Bootcamper!</h3>
+        </div>
+        <div class="col-12">
+          <br>
+          <h3 class="text-white justify-content-center text-center text-uppercase">To Professional Web Developer!</h3><br>
+          <div class="mt-4">
+            <a href="#" class="btn btn-danger rounded font btn-lg">Tell Me More</a>
+          </div>
+        </div>
+        
+      </div>
     </div>
   </div>
-</div>
-<!-- <h2>Hello Students! I'am Hein Min Htet and I will teach you HTML, JavaScript and JQuery..
-</h2>
-<h3>Here are Power Point about Subject! Let Download.....</h3>
- -->
+  <hr id="divider">
+
+<h5 class="text-center font">Hello Students!</h5>
+<h3 class="font text-center">I'am Hein Min Htet and I will teach you HTML, JavaScript and JQuery..</h3>
+<h5 class="font text-center">Here are Power Point about Subject! Let Download.....</h5>
 <div class="container-fluid my-5">
   <div class="row">
      @foreach($subjects as $subject)
@@ -48,36 +61,111 @@
       <img src="{{asset($subject->logo)}}" style="width: 400px; height: 400px";>
       </div>
       <div class="card-footer">
-        <a href="{{$subject->pdf_link}}" class="btn btn-outline-info btn-block">Download PPT</a>
+        <a href="{{$subject->pdf_link}}" class="btn btn-outline-warning btn-block">Download PPT</a>
       </div>
     </div>
     @endforeach
-  </div>
-  
+  </div> 
 </div>
 
-<!-- @foreach($subjects as $subject)
-<ul>
-  <li>{{$subject->name}}</li>
-  <li><a href="{{$subject->pdf_link}}">HTML</a></li>
-</ul>
-@endforeach -->
 
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-3">
-    </div>
-  </div>
-</div> -->
+<div id="counter">
+  <div class="container p-5">
+    <div class="row text-white text-center">
+<div class="col-lg-4 col-md-12 col-sm-12">
+        <h3>3</h3>
+        <p>Subjects</p>
+      </div>
+<div class="col-lg-4 col-md-12 col-sm-12">
+        <h1>10</h1>
+        <p>Homeworks</p>
+      </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-12 bg-info">
-      <p class="text-white text-center my-2">Myanmar IT Consulting||
-      Web Developer Bootcamp</p>
+<div class="col-lg-4 col-md-12 col-sm-12">
+        <h1>12</h1>
+        <p>Exercises</p>
+      </div>
+
     </div>
   </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+ <hr>
+  <div class="container" style="position: absolute; margin-left: 100px;">
+    <div class="row">
+      <div class="col-lg-3">
+        <ul class="list-unstyled">
+          <li>Support</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Inside LMS</li>
+          <li>What's new</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3">
+        <ul class="list-unstyled">
+          <li>Need Help?</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Courses</li>
+          <li>New Advance</li>
+        </ul>
+      </div>
+
+
+      <div class="col-lg-3">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Contact List:<p>
+              <i class="fas fa-map-marker-alt"></i>
+              No.169/7B,MTP Condo, Insein Road , Hlaing Township, Yangon
+            </div>
+            <div class="col-lg-12">
+              <i class="fas fa-phone"></i>
+              +95 9 259288199
+            </div>
+            <div class="col-lg-12">
+              <i class="fas fa-envelope-open-text"></i>
+              info@myanmaritc.com
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <ul class="list-unstyled">
+            <li><i class="fas fa-graduation-cap"></i>LMS</li>
+            <li>learningmanagementsystem@org.com</li>
+            <li><i class="fab fa-facebook"></i> <i class="fab fa-twitter-square"></i> 
+              <i class="fab fa-instagram"></i></li>    
+            </ul>
+          </div>
+
+
+
+
+        </div>
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <hr>
+              <p class="text-center"><i class="fas fa-copyright"></i>Myanmar IT Consulting || Web Developer Bootcamp</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
 </body>
 </html>
