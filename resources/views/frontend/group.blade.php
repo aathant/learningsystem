@@ -80,9 +80,10 @@
     	This is testing post
     	<hr><br>
     	<p class="card-text">
-    	This is testing comment
-    	<hr></p>
-    	<textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p>
+    	<a href="#" class="btn btn-success font"  data-toggle="modal" data-target="#comment_modal">
+        <i class="far fa-comment"></i> Comment</a>
+    	<!-- <hr></p>
+    	<textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p> -->
   </div>
 
 </div>
@@ -234,6 +235,55 @@
   </div>
 </div>
 
+<div class="modal" tabindex="-1" role="dialog" id="comment_modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><textarea class="btn-block" placeholder="Add Comment" style="border: none"></textarea></p>
+         <button type="button" class="btn btn-success"><i class="far fa-comment"></i>&nbsp;add</button>
+      </div>
+     <!--  <div class="modal-footer">
+      </div> -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 card">
+            <div class="card-text"><i class="fas fa-image"></i>Name</div>
+            <div class="card-text">Previous Comments</div>
+            <div class="card-footer">
+              <input type="text" name="mark">&nbsp;<a href="#" class="btn-sm btn-danger"><i class="fas fa-check"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-12 card">
+            <div class="card-text"><i class="fas fa-image"></i>Name</div>
+            <div class="card-text">Previous Comments</div>
+          </div>
+
+          <div class="col-lg-12 card">
+            <div class="card-text"><i class="fas fa-image"></i>Name</div>
+            <div class="card-text">Previous Comments</div>
+          </div>
+
+          <div class="col-lg-12 card">
+            <div class="card-text"><i class="fas fa-image"></i>Name</div>
+            <div class="card-text">Previous Comments</div>
+          </div>
+
+          <div class="col-lg-12 card">
+            <div class="card-text"><i class="fas fa-image"></i>Name</div>
+            <div class="card-text">Previous Comments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

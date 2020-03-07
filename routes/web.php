@@ -22,6 +22,19 @@ Route::get('/group',function(){
 	return view('frontend.group');
 });
 
+Route::get('/teacher',function(){
+	return view('frontend.teacher');
+});
+
+
+Route::get('/aboutus',function(){
+	return view('frontend.aboutus');
+});
+
+Route::get('/contact',function(){
+	return view('frontend.contact');
+});
+
 
 // Route::get('/', function () {
 //     return view('welcome');
