@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Homework extends Model
+class Assignment extends Model
 {
-    protected $fillable=['post','marks','start_time','end_time','user_id'];
+    protected $fillable=['comment','homework_id','user_id'];
 
     public function user($value='')
     {

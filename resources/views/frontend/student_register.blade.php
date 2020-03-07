@@ -35,7 +35,7 @@
 							<a class="nav-link text-white" href="#">Contact</a>
 						</li>
 						<li class="nav-item px-3">
-							<a class="nav-link text-white" href="#" data-toggle="modal" data-target="#cardoneModal">Sign in|Sign Up</a>
+							<a class="nav-link text-white" href="" data-toggle="modal" data-target="#cardoneModal">Sign in|Sign Up</a>
 						</li>
 					</ul>
 				</div>
