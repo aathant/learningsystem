@@ -50,6 +50,7 @@ Route::get('/contact',function(){
 // Route::resource('mentors','MentorController');
 Route::resource('students','StudentController');
 Route::resource('homeworks','HomeworkController');
+Route::resource('assignments','AssignmentController');
 Route::group([
 	//'name'='backend',
 	'middleware'=>'auth',

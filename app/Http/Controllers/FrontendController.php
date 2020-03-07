@@ -10,6 +10,7 @@ use App\User;
 use App\Subject;
 use App\Batch;
 use App\Homework;
+use App\Assignment;
 
 class FrontendController extends Controller
 {
@@ -45,11 +46,13 @@ class FrontendController extends Controller
 
     public function group_communication($value='')
     {
-        # code...
+        $assignment=Assignment::All();
         $homework=Homework::All();
+        dd($homework->);
         $user = Auth::User();
         // $id = User::find(Auth::User());
         // dd($user->name);;
-        return view('frontend.group',compact('homework','user'));
-    }
+        return view('frontend.group',compact('homework','assignment','user'));
+    } 
+
 }

@@ -50,19 +50,6 @@
       </div>
     </div>
 
-<<<<<<< HEAD
-<!-- <div class="container-fluid my-5">
-<div class="row">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	<textarea class="btn-block" placeholder="What is on your mind" style="border: none"></textarea><hr><br><a href="#" class="btn btn-info btn-block">Post</a></p>
-  </div>
-</div>
-</div>
-</div> -->
 <div class="container-fluid my-5">
 	<div class="row">
 		<div class="offset-9 col-lg-3">
@@ -70,30 +57,6 @@
 		</div>
 	</div>
 </div>
-
-<div class="container-fluid">
-<div class="row">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	This is testing post
-    	<hr><br>
-    	<p class="card-text">
-    	<a href="#" class="btn btn-success font"  data-toggle="modal" data-target="#comment_modal">
-        <i class="far fa-comment"></i> Comment</a>
-    	<!-- <hr></p>
-    	<textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p> -->
-=======
-    <div class="container-fluid my-5">
-     <div class="row">
-      <div class="offset-9 col-lg-3">
-        <a href="#" class="btn btn-success rounded font btn-lg" data-toggle="modal" data-target="#post_modal"><i class="fas fa-plus"></i>Add Post</a>
-      </div>
-    </div>
->>>>>>> ffb6bdd064767a1ab96d8b87ede080f12ecb39d5
-  </div>
 
   <div class="container-fluid">
     @foreach($homework as $row)
@@ -106,9 +69,8 @@
            {{$row->post}}
            <hr><br>
            <p class="card-text">
-             This is testing comment
-             <hr></p>
-             <textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p>
+            <a href="#" class="btn btn-success font"  data-toggle="modal" data-target="#comment_modal">
+        <i class="far fa-comment"></i> Comment</a>
            </div>
          </div>
        </div>
@@ -206,12 +168,12 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Name</h5>
+              <h5 class="modal-title">{{$user->name}}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="{{ route('homeworks.store') }}">
+            <form method="POST" action="{{ route('homeworks.store') }}" enctype="multipart/form-data">
               @csrf
               <div class="modal-body">
                 <div class="form-group row">
@@ -226,9 +188,6 @@
             </form>
           </div>
         </div>
-      </div>
-<<<<<<< HEAD
-    </div>
   </div>
 </div>
 
@@ -236,57 +195,36 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Name</h5>
+        <!-- <h5 class="modal-title">{{$user->name}}</h5> -->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form method="post" action="{{route('assignments.store')}}" enctype="multipart/form-data">
+        @csrf
       <div class="modal-body">
-        <p><textarea class="btn-block" placeholder="Add Comment" style="border: none"></textarea></p>
-         <button type="button" class="btn btn-success"><i class="far fa-comment"></i>&nbsp;add</button>
+            <input type="hidden" name="post" value="{{$homework}}" >
+        <p><textarea class="btn-block" name="comment" placeholder="Add Comment" style="border: none"></textarea></p>
+         <button type="submit" class="btn btn-success"><i class="far fa-comment"></i>&nbsp;add</button>
       </div>
+    </form>
      <!--  <div class="modal-footer">
       </div> -->
       <div class="container-fluid">
+        @foreach($assignment as $row)
         <div class="row">
           <div class="col-lg-12 card">
-            <div class="card-text"><i class="fas fa-image"></i>Name</div>
-            <div class="card-text">Previous Comments</div>
+            <div class="card-text"><i class="fas fa-image"></i>{{$user->name}}</div>
+            <div class="card-text">{{$row->comment}}</div>
             <div class="card-footer">
               <input type="text" name="mark">&nbsp;<a href="#" class="btn-sm btn-danger"><i class="fas fa-check"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-12 card">
-            <div class="card-text"><i class="fas fa-image"></i>Name</div>
-            <div class="card-text">Previous Comments</div>
-          </div>
-
-          <div class="col-lg-12 card">
-            <div class="card-text"><i class="fas fa-image"></i>Name</div>
-            <div class="card-text">Previous Comments</div>
-          </div>
-
-          <div class="col-lg-12 card">
-            <div class="card-text"><i class="fas fa-image"></i>Name</div>
-            <div class="card-text">Previous Comments</div>
-          </div>
-
-          <div class="col-lg-12 card">
-            <div class="card-text"><i class="fas fa-image"></i>Name</div>
-            <div class="card-text">Previous Comments</div>
-          </div>
         </div>
+        @endforeach
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-=======
->>>>>>> ffb6bdd064767a1ab96d8b87ede080f12ecb39d5
-
     </body>
     </html>

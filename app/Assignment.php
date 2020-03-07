@@ -12,4 +12,9 @@ class Assignment extends Model
     {
     	return $this->belongsTo('App\User');
     }
+
+    public function homework($value='')
+    {
+    	return $this->belongsTo('App\Homework');
+    }
 }
