@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Homework;
+use App\Assignment;
 use App\User;
-class HomeworkController extends Controller
+
+class AssignmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,7 @@ class HomeworkController extends Controller
      */
     public function index()
     {
-        $homework=Homework::All();
-        $user=User::All();
-        return view('frontend.group',compact('homework','user'));
+        //
     }
 
     /**
@@ -27,8 +26,7 @@ class HomeworkController extends Controller
      */
     public function create()
     {
-        $user=User::All();
-        return view('backend.homeworks.create',compact('user'));
+        //
     }
 
     /**
@@ -41,19 +39,17 @@ class HomeworkController extends Controller
     {
         //validation //2
         $request->validate([
-            "post"=>'required|min:1|max:191',
+            "comment"=>'required|min:1|max:191',
         ]);
 
         //Store Data //4
         $user=Auth::User();
-        $homework=new Homework;
-        $homework->post = request('post');
-        $homework->marks= 0;
-        $homework->start_time= 0;
-        $homework->end_time= 0;
-        $homework->user_id= $user->id;
+        $assignment=new Assignment;
+        $assignment->post = request('post');
+        $assignment->homework_id= ;
+        $assignment->user_id= $user->id;
 
-         $homework->save();//data INsert
+         $assignment->save();//data INsert
 
         //Return redirect//5
          return redirect()->route('group_communication');
@@ -67,8 +63,7 @@ class HomeworkController extends Controller
      */
     public function show($id)
     {
-        $homework=Homework::findOrFail($id);
-        return view('frontend.group',compact('homework'));
+        //
     }
 
     /**

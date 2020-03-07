@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Subject_Home</title>
-  
+	<title>Group_Communication</title>
+
   <link rel="stylesheet" type="text/css" href="{{asset('frontend/style.css')}}">
 
   <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.min.css')}}">
@@ -17,137 +17,88 @@
 </head>
 <body>
 	<div class="bg" style="background-color: #FAFAFA">
-  <div id="com_group">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand text-white" href="#">Student's Name</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
-          <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
-          <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container" style="padding-top: 150px">
-      <div class="row justify-content-center text-center">
-        <div class="col-10">
-          <h3 class="text-white font">Welcome From Chatroom!</h3>
-        </div>
-        <div class="col-12">
-          <br>
-          <h3 class="text-white justify-content-center text-center">Let Disscout About Website!</h3><br>
-          <div class="mt-4">
-            <a href="#" class="btn btn-danger rounded font btn-lg" data-toggle="modal" data-target="#post_modal">Learn More</a>
+    <div id="com_group">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand text-white" href="#">{{$user->name}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
+            <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
+            <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
           </div>
         </div>
+      </nav>
 
+      <div class="container" style="padding-top: 150px">
+        <div class="row justify-content-center text-center">
+          <div class="col-10">
+            <h3 class="text-white font">Welcome From Chatroom!</h3>
+          </div>
+          <div class="col-12">
+            <br>
+            <h3 class="text-white justify-content-center text-center">Let Disscout About Website!</h3><br>
+            <div class="mt-4">
+              <a href="#" class="btn btn-danger rounded font btn-lg" data-toggle="modal" data-target="#post_modal">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid my-5">
+     <div class="row">
+      <div class="offset-9 col-lg-3">
+        <a href="#" class="btn btn-success rounded font btn-lg" data-toggle="modal" data-target="#post_modal"><i class="fas fa-plus"></i>Add Post</a>
       </div>
     </div>
   </div>
 
-<!-- <div class="container-fluid my-5">
-<div class="row">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	<textarea class="btn-block" placeholder="What is on your mind" style="border: none"></textarea><hr><br><a href="#" class="btn btn-info btn-block">Post</a></p>
-  </div>
-</div>
-</div>
-</div> -->
-<div class="container-fluid my-5">
-	<div class="row">
-		<div class="offset-9 col-lg-3">
-			 <a href="#" class="btn btn-success rounded font btn-lg" data-toggle="modal" data-target="#post_modal"><i class="fas fa-plus"></i>Add Post</a>
-		</div>
-	</div>
-</div>
+  <div class="container-fluid">
+    @foreach($homework as $row)
+    <div class="row">
+      <div class=" offset-2 col-lg-8 offset-2 card">
+        <div class="card-body">
+          <h5 class="card-title">{{$row->user->name}}</h5>
+          <hr>
+          <p class="card-text">
+           {{$row->post}}
+           <hr><br>
+           <p class="card-text">
+             This is testing comment
+             <hr></p>
+             <textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p>
+           </div>
+         </div>
+       </div>
+       @endforeach
+     </div>
+   </div>
 
-<div class="container-fluid">
-<div class="row">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	This is testing post
-    	<hr><br>
-    	<p class="card-text">
-    	This is testing comment
-    	<hr></p>
-    	<textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p>
-  </div>
+   <div id="counter1">
+    <div class="container p-5">
+      <div class="row text-white text-center">
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <h3>3</h3>
+          <p>Subjects</p>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <h1>10</h1>
+          <p>Homeworks</p>
+        </div>
 
-</div>
-</div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <h1>12</h1>
+          <p>Exercises</p>
+        </div>
 
-
-<div class="row my-3">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	This is testing post
-    	<hr><br><textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p>
-  </div>
-</div>
-</div>
-
-<div class="row my-3">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	This is testing post
-    	<hr><br><textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p>
-  </div>
-</div>
-</div>
-
-<div class="row my-3">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	This is testing post
-    	<hr><br><textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p>
-  </div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div id="counter1">
-  <div class="container p-5">
-    <div class="row text-white text-center">
-<div class="col-lg-4 col-md-12 col-sm-12">
-        <h3>3</h3>
-        <p>Subjects</p>
       </div>
-<div class="col-lg-4 col-md-12 col-sm-12">
-        <h1>10</h1>
-        <p>Homeworks</p>
-      </div>
-
-<div class="col-lg-4 col-md-12 col-sm-12">
-        <h1>12</h1>
-        <p>Exercises</p>
-      </div>
-
     </div>
   </div>
-</div>
 
   <hr>
   <div class="container" style="position: absolute; margin-left: 100px;">
@@ -214,30 +165,31 @@
 
 
 
-<div class="modal" tabindex="-1" role="dialog" id="post_modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Name</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="modal" tabindex="-1" role="dialog" id="post_modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Name</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form method="POST" action="{{ route('homeworks.store') }}">
+              @csrf
+              <div class="modal-body">
+                <div class="form-group row">
+                  <p><textarea name="post" class="col-md-12 btn-block form-control" placeholder="What is on your mind......" style="border: none"></textarea></p>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Post</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <p><textarea class="btn-block" placeholder="What is on your mind" style="border: none"></textarea></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Post</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
 
     </body>
     </html>

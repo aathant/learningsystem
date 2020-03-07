@@ -22,7 +22,7 @@
 			@foreach($homework as $row)
 			<tr>
 				<td>{{$i++}}</td>
-				<td>{{$row->question}}</td>
+				<td>{{$row->question}}</td> 
 				<td>{{$row->marks}}</td>
 				<td>{{$row->description}}</td>
 				<td>{{$row->trainer->name}}</td>

@@ -12,15 +12,17 @@
 */
 Route::get('/','FrontendController@main')->name('main');
 
+Route::get('/group_communication','FrontendController@group_communication')->name('group_communication');
+
 Route::get('/subject','FrontendController@subject_home')->name('subject');
 
 Route::get('/detail_subject/{id}','FrontendController@Subject')->name('detail_subject');
 
 Route::get('/student','FrontendController@register')->name('frontendregister');
 
-Route::get('/group',function(){
-	return view('frontend.group');
-});
+// Route::get('/group',function(){
+// 	return view('frontend.group');
+// });
 
 
 // Route::get('/', function () {
@@ -34,6 +36,7 @@ Route::get('/group',function(){
 
 // Route::resource('mentors','MentorController');
 Route::resource('students','StudentController');
+Route::resource('homeworks','HomeworkController');
 Route::group([
 	//'name'='backend',
 	'middleware'=>'auth',
@@ -60,7 +63,7 @@ Route::resource('mentors','MentorController');
 
 Route::resource('groups','GroupController');
 
-Route::resource('homeworks','HomeController');
+// Route::resource('homeworks','HomeworkController');
 
 Route::post('course_batch','GroupController@course_batch')->name('course_batch');
 

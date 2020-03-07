@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomeworksTable extends Migration
+class CreateAssignmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateHomeworksTable extends Migration
      */
     public function up()
     {
-        Schema::create('homeworks', function (Blueprint $table) {
+        Schema::create('assignments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('post');
-            $table->string('marks');
-            $table->string('start_time');
-            $table->string('end_time');
+            $table->text('comment');
+            $table->unsignedBigInteger('homework_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ class CreateHomeworksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homeworks');
+        Schema::dropIfExists('assignments');
     }
 }
