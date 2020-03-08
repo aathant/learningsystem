@@ -40,14 +40,16 @@
 	<!-- copy -->
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			@foreach($trainers as $trainer)
+			<div class=" offset-1 col-md-3">
 				<article class="team blue">
 					<div class="photo">
-						<img class="pic" src="{{asset('frontend/image/yy.jpg')}}" alt="libby">
+						<img class="pic" src="{{asset($trainer->avatar)}}" alt="libby">
 					</div>
 					<div class="profile-text">
-						<h1 class="title">Yathaw Myat Noe</h1>
-						<span class="position">UI/UX Teacher</span>
+						<p class="title font">{{$trainer->user->name}}</p>
+						<span class="position"><a href="{{$trainer->portfoilo}}" class="list-unstyled">
+						Trainer</span>
 					</div>
 					<ul class="social-icons">
 						<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
@@ -57,15 +59,19 @@
 					</ul>
 				</article>
 			</div>
+			@endforeach
+		</div>
 
+		<div class="row">
+			@foreach($mentors as $mentor)
 			<div class="offset-1 col-md-3">
 				<article class="team green">
 					<div class="photo">
-						<img src="{{asset('frontend/image/www.jpg')}}" alt="Mick">
+						<img src="{{asset($mentor->avatar)}}" alt="Mick">
 					</div>
 					<div class="profile-text">
-						<h1 class="title">Hein Min Htet</h1>
-						<span class="position">HTML Teacher</span>
+						<p class="title">{{$mentor->user->name}}</p>
+						<span class="position"><a href="{{$mentor->portfoilo}}" class="list-unstyled"></span>
 					</div>
 					<ul class="social-icons">
 						<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
@@ -75,84 +81,10 @@
 					</ul>
 				</article>
 			</div>
-
-			<div class="offset-1 col-md-3">
-				<article class="team blue">
-					<div class="photo">
-						<img class="pic" src="{{asset('frontend/image/tt.jpg')}}" alt="libby">
-					</div>
-					<div class="profile-text">
-						<h1 class="title">Thet Paing Htut</h1>
-						<span class="position">Laravel Teacher</span>
-					</div>
-					<ul class="social-icons">
-						<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href=""><i class="fab fa-twitter"></i></a></li>
-						<li><a href=""><i class="fab fa-linkedin"></i></a></li>
-						<li><a href=""><i  class="fab fa-dribbble"></i></a></li>
-					</ul>
-				</article>
-			</div></div></div>
-
-			<!-- mentors -->
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<article class="team blue">
-							<div class="photo">
-								<img class="pic" src="{{asset('frontend/image/yy.jpg')}}" alt="libby">
-							</div>
-							<div class="profile-text">
-								<h1 class="title">Yathaw Myat Noe</h1>
-								<span class="position">UI/UX Teacher</span>
-							</div>
-							<ul class="social-icons">
-								<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href=""><i class="fab fa-twitter"></i></a></li>
-								<li><a href=""><i class="fab fa-linkedin"></i></a></li>
-								<li><a href=""><i  class="fab fa-dribbble"></i></a></li>
-							</ul>
-						</article>
-					</div>
-
-					<div class="offset-1 col-md-3">
-						<article class="team green">
-							<div class="photo">
-								<img src="{{asset('frontend/image/www.jpg')}}" alt="Mick">
-							</div>
-							<div class="profile-text">
-								<h1 class="title">Hein Min Htet</h1>
-								<span class="position">HTML Teacher</span>
-							</div>
-							<ul class="social-icons">
-								<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href=""><i class="fab fa-twitter"></i></a></li>
-								<li><a href=""><i class="fab fa-linkedin"></i></a></li>
-								<li><a href=""><i  class="fab fa-dribbble"></i></a></li>
-							</ul>
-						</article>
-					</div>
-
-					<div class="offset-1 col-md-3">
-						<article class="team blue">
-							<div class="photo">
-								<img class="pic" src="{{asset('frontend/image/tt.jpg')}}" alt="libby">
-							</div>
-							<div class="profile-text">
-								<h1 class="title">Thet Paing Htut</h1>
-								<span class="position">Laravel Teacher</span>
-							</div>
-							<ul class="social-icons">
-								<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href=""><i class="fab fa-twitter"></i></a></li>
-								<li><a href=""><i class="fab fa-linkedin"></i></a></li>
-								<li><a href=""><i  class="fab fa-dribbble"></i></a></li>
-							</ul>
-						</article>
-					</div>
-
-				</div>
+			@endforeach
 			</div>
+		</div>
+
 			<!-- copy -->
 
 			<hr>
@@ -205,10 +137,6 @@
 									<i class="fab fa-instagram"></i></li>    
 								</ul>
 							</div>
-
-
-
-
 						</div>
 
 
@@ -220,16 +148,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
-
-
-
-
-
-
-
-
-
 				</body>
 				</html>

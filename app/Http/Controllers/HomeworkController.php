@@ -46,12 +46,13 @@ class HomeworkController extends Controller
 
         //Store Data //4
         $user=Auth::User();
+        dd($user);
         $homework=new Homework;
         $homework->post = request('post');
         $homework->marks= 0;
         $homework->start_time= 0;
         $homework->end_time= 0;
-        $homework->user_id= $user->id;
+        $homework->user_id= $user->name;
 
          $homework->save();//data INsert
 

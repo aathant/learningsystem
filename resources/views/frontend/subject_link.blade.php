@@ -18,7 +18,7 @@
 <body>
 <div id="subject_link">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand text-white" href="#">{{$user->name}}</a>
+      <a class="navbar-brand text-white" href="#" style="border-color: blue;">{{$user->name}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,22 +36,16 @@
       <div class="row justify-content-center text-center">
         <div class="col-10">
           <h3 class="text-white font">Welcome Bootcamper!</h3>
-        </div>
-        <div class="col-12">
-          <br>
           <h3 class="text-white justify-content-center text-center text-uppercase">To Professional Web Developer!</h3><br>
-          <div class="mt-4">
-            <a href="#" class="btn btn-danger rounded font btn-lg">Tell Me More</a>
-          </div>
-        </div>
-        
+          <a href="#" class="btn btn-danger rounded font btn-lg">Tell Me More</a>
+        </div>  
       </div>
     </div>
   </div>
   <hr id="divider">
 
 <h5 class="text-center font">Hello Students!</h5>
-<h3 class="font text-center">I'am Hein Min Htet and I will teach you HTML, JavaScript and JQuery..</h3>
+<!-- <h3 class="font text-center">I'am Hein Min Htet and I will teach you HTML, JavaScript and JQuery..</h3> -->
 <h5 class="font text-center">Here are Power Point about Subject! Let Download.....</h5>
 <div class="container-fluid my-5">
   <div class="row">
@@ -90,17 +84,7 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
- <hr>
+<hr>
   <div class="container" style="position: absolute; margin-left: 100px;">
     <div class="row">
       <div class="col-lg-3">
@@ -144,10 +128,10 @@
 
         <div class="col-lg-3">
           <ul class="list-unstyled">
-            <li><i class="fas fa-graduation-cap"></i>LMS</li>
-            <li>learningmanagementsystem@org.com</li>
-            <li><i class="fab fa-facebook"></i> <i class="fab fa-twitter-square"></i> 
-              <i class="fab fa-instagram"></i></li>    
+            <li class="font"><i class="fas fa-graduation-cap" style="color:gray;"></i> Learning Management System</li>
+            <li>lms-batch14@org.com</li>
+            <li><i class="fab fa-facebook" style="color:#3b5998;"></i> <i class="fab fa-twitter-square" style="color:#00acee;"></i> 
+              <i class="fab fa-instagram" style="color:#C13584;"></i></li>    
             </ul>
           </div>
 
@@ -161,11 +145,12 @@
           <div class="row">
             <div class="col-lg-12">
               <hr>
-              <p class="text-center"><i class="fas fa-copyright"></i>Myanmar IT Consulting || Web Developer Bootcamp</p>
+              <p class="text-center"><i class="fas fa-copyright" style="color:gray;"></i>    Myanmar IT Consulting || Web Developer Bootcamp</p>
             </div>
           </div>
         </div>
 
       </div>
+
 </body>
 </html>

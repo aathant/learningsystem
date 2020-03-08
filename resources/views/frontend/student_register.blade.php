@@ -29,13 +29,13 @@
 							<a class="nav-link text-white" href="{{route('main')}}">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item px-3">
-							<a class="nav-link text-white" href="#">About</a>
+							<a class="nav-link text-white" href="aboutus">About</a>
 						</li>
 						<li class="nav-item px-3">
-							<a class="nav-link text-white" href="#">Contact</a>
+							<a class="nav-link text-white" href="contact">Contact</a>
 						</li>
 						<li class="nav-item px-3">
-							<a class="nav-link text-white" href="" data-toggle="modal" data-target="#cardoneModal">Sign in|Sign Up</a>
+							<a class="nav-link text-white" href="{{route('frontendregister')}}">Register</a>
 						</li>
 					</ul>
 				</div>
@@ -43,7 +43,7 @@
 
 			<div class="container-fluid">
 	<div class="row">
-		<div class="offset-1 col-lg-10 offset-1 card my-5">
+		<div class="offset-1 col-lg-10 offset-1 col-sm-12 col-md-12 card my-5">
 			<h2 class="text-center my-5">New Student Registeration Form</h2>
 			@if (session('status'))
 			<div class="alert alert-success">

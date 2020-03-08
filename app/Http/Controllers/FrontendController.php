@@ -10,13 +10,16 @@ use App\User;
 use App\Subject;
 use App\Batch;
 use App\Homework;
+use App\Course;
+use App\Mentor;
 
 class FrontendController extends Controller
 {
     public function main($value='')
     {
     	# code...
-    	return view('frontend.main');
+        $courses=Course::All();
+    	return view('frontend.main',compact('courses'));
     }
 
     public function register($value='')
@@ -51,5 +54,14 @@ class FrontendController extends Controller
         // $id = User::find(Auth::User());
         // dd($user->name);;
         return view('frontend.group',compact('homework','user'));
+    }
+
+    public function teacher($value='')
+    {
+        # code...
+        $trainers=Trainer::All();
+        $mentors=Mentor::All();
+        $users=User::All();
+        return view('frontend.teacher',compact('trainers','mentors','users'));
     }
 }

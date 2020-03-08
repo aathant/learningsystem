@@ -20,13 +20,15 @@ Route::get('/detail_subject/{id}','FrontendController@Subject')->name('detail_su
 
 Route::get('/student','FrontendController@register')->name('frontendregister');
 
+Route::get('/teacher','FrontendController@teacher')->name('teacher');
+
 // Route::get('/group',function(){
 // 	return view('frontend.group');
 // });
 
-Route::get('/teacher',function(){
-	return view('frontend.teacher');
-});
+// Route::get('/teacher',function(){
+// 	return view('frontend.teacher');
+// });
 
 
 Route::get('/aboutus',function(){

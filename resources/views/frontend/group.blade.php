@@ -3,7 +3,7 @@
 <head>
 	<title>Group_Communication</title>
 
-  <link rel="stylesheet" type="text/css" href="{{asset('frontend/style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('frontend/style3.css')}}">
 
   <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.min.css')}}">
 
@@ -16,41 +16,26 @@
   <script type="text/javascript" src="{{asset('frontend/custom.js')}}"></script>
 </head>
 <body>
-	<div class="bg" style="background-color: #FAFAFA">
-    <div id="com_group">
+	<!-- <div class="bg" style="background-color: #FAFAFA">
+     -->
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand text-white" href="#">{{$user->name}}</a>
+        <a class="navbar-brand text-white" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
-            <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
-            <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
+            <a class="nav-item nav-link active px-4" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link px-4" href="#">My Subjects</a>
+            <a class="nav-item nav-link px-4" href="#">My Teachers/Mentors</a>
+            <a class="nav-item nav-link px-4" href="#">Events</a>
           </div>
         </div>
       </nav>
 
-      <div class="container" style="padding-top: 150px">
-        <div class="row justify-content-center text-center">
-          <div class="col-10">
-            <h3 class="text-white font">Welcome From Chatroom!</h3>
-          </div>
-          <div class="col-12">
-            <br>
-            <h3 class="text-white justify-content-center text-center">Let Disscout About Website!</h3><br>
-            <div class="mt-4">
-              <a href="#" class="btn btn-danger rounded font btn-lg" data-toggle="modal" data-target="#post_modal">Learn More</a>
-            </div>
-          </div>
+      
+  
 
-        </div>
-      </div>
-    </div>
-
-<<<<<<< HEAD
 <!-- <div class="container-fluid my-5">
 <div class="row">
 <div class=" offset-2 col-lg-8 offset-2 card">
@@ -71,29 +56,6 @@
 	</div>
 </div>
 
-<div class="container-fluid">
-<div class="row">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	This is testing post
-    	<hr><br>
-    	<p class="card-text">
-    	<a href="#" class="btn btn-success font"  data-toggle="modal" data-target="#comment_modal">
-        <i class="far fa-comment"></i> Comment</a>
-    	<!-- <hr></p>
-    	<textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p> -->
-=======
-    <div class="container-fluid my-5">
-     <div class="row">
-      <div class="offset-9 col-lg-3">
-        <a href="#" class="btn btn-success rounded font btn-lg" data-toggle="modal" data-target="#post_modal"><i class="fas fa-plus"></i>Add Post</a>
-      </div>
-    </div>
->>>>>>> ffb6bdd064767a1ab96d8b87ede080f12ecb39d5
-  </div>
 
   <div class="container-fluid">
     @foreach($homework as $row)
@@ -108,13 +70,13 @@
            <p class="card-text">
              This is testing comment
              <hr></p>
-             <textarea class="btn-block" placeholder="comment" style="border: none"></textarea></p>
+             <a href="#" class="btn btn-success font"  data-toggle="modal" data-target="#comment_modal">
+        <i class="far fa-comment"></i> Comment</a>
            </div>
          </div>
        </div>
        @endforeach
      </div>
-   </div>
 
    <div id="counter1">
     <div class="container p-5">
@@ -227,7 +189,6 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
     </div>
   </div>
 </div>
@@ -281,12 +242,5 @@
     </div>
   </div>
 </div>
-
-
-
-
-=======
->>>>>>> ffb6bdd064767a1ab96d8b87ede080f12ecb39d5
-
     </body>
     </html>

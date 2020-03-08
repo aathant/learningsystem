@@ -27,16 +27,16 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active px-3">
-        <a class="nav-link text-white" href="{{route('main')}}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-white px-3" href="{{route('main')}}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link text-white" href="#">About</a>
+        <a class="nav-link text-white px-3" href="aboutus">About</a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link text-white" href="#">Contact</a>
+        <a class="nav-link text-white px-3" href="contact">Contact</a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#cardoneModal">Sign in|Sign Up</a>
+        <a class="nav-link text-white px-3" href="{{route('frontendregister')}}">Register</a>
       </li>
     </ul>
   </div>
@@ -45,7 +45,8 @@
     	 <div class="container" style="padding-top: 150px;">
       <div class="row justify-content-center text-center">
         <div class="col-10">
-          <h1 class="text-white font">Contact Us</h1>
+          <h1 class="text-white font">Web Developer Bootcamp!</h1>
+          <a href="#" class="btn btn-danger btn-lg font">Contact Us</a>
         </div>
       </div>
     </div>
@@ -54,7 +55,7 @@
 
 
 <div class="container-fluid">
-	<h1 class="font">Contact Information</h1>
+	<h1 class="font my-3">Contact Information</h1>
 	<div class="row">
 
 
@@ -181,10 +182,10 @@
 
         <div class="col-lg-3">
           <ul class="list-unstyled">
-            <li><i class="fas fa-graduation-cap"></i>LMS</li>
-            <li>learningmanagementsystem@org.com</li>
-            <li><i class="fab fa-facebook"></i> <i class="fab fa-twitter-square"></i> 
-              <i class="fab fa-instagram"></i></li>    
+            <li class="font"><i class="fas fa-graduation-cap" style="color:gray;"></i> Learning Management System</li>
+            <li>lms-batch14@org.com</li>
+            <li><i class="fab fa-facebook" style="color:#3b5998;"></i> <i class="fab fa-twitter-square" style="color:#00acee;"></i> 
+              <i class="fab fa-instagram" style="color:#C13584;"></i></li>    
             </ul>
           </div>
 
@@ -198,13 +199,12 @@
           <div class="row">
             <div class="col-lg-12">
               <hr>
-              <p class="text-center"><i class="fas fa-copyright"></i>Myanmar IT Consulting || Web Developer Bootcamp</p>
+              <p class="text-center"><i class="fas fa-copyright" style="color:gray;"></i>    Myanmar IT Consulting || Web Developer Bootcamp</p>
             </div>
           </div>
         </div>
 
       </div>
-
 
 </body>
 </html>
