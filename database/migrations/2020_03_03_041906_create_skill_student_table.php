@@ -19,13 +19,13 @@ class CreateSkillStudentTable extends Migration
             $table->unsignedBigInteger('subject_id');
             $table->timestamps();
 
-            $table->foreign('student_id')
-                  ->references('id')->on('students')
-                  ->onDelete('cascade');
+            // $table->foreign('student_id')
+            //       ->references('id')->on('students')
+            //       ->onDelete('cascade');
                   
-            $table->foreign('subject_id')
-                  ->references('id')->on('subjects')
-                  ->onDelete('cascade');
+            // $table->foreign('subject_id')
+            //       ->references('id')->on('subjects')
+            //       ->onDelete('cascade');
         });
     }
 

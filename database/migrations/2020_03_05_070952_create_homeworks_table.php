@@ -17,8 +17,8 @@ class CreateHomeworksTable extends Migration
             $table->bigIncrements('id');
             $table->text('post');
             $table->string('marks');
-            $table->string('start_time');
-            $table->string('end_time');
+            $table->string('start_time')->nullable();;
+            $table->string('end_time')->nullable();;
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });

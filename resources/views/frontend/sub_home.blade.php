@@ -18,27 +18,24 @@
 <body>
   <div id="subject">
     <nav class="navbar navbar-expand-lg navbar-light">
-<<<<<<< HEAD
-      <a class="navbar-brand text-white" href="#" >{{$user->name}}</a>
-=======
-      <a class="navbar-brand text-white font border rounded-pill border-warning p-2" href="#" style="font-size: x-large;">Khaing Myint San Oo</a>
->>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
+      <a class="navbar-brand text-white font border rounded-pill border-warning p-2" href="#" style="font-size: x-large;">{{$user->name}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link px-4 text-white" href="#">Subjects</a>
+         <!--  <a class="nav-item nav-link px-4 text-white" href="#">Subjects</a> -->
           <a class="nav-item nav-link px-4 text-white" href="#">Teachers/Mentors</a>
           <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
+           <!-- <a class="nav-item nav-link px-4 text-white" href="#">Logout</a> -->
         </div>
       </div>
     </nav>
 
     <div class="container" style="padding-top: 200px;">
       <div class="row justify-content-center text-center">
-        <div class="col-10">
+        <div class="col-lg-12 col-md-12 col-sm-12">
           <h3 class="text-white font">Welcome Bootcamper!</h3><br>
            <h3 class="text-white justify-content-center text-center">WE ARE TRAINERS OF PHP WEB DEVELOPER BOOTCAMP!</h3><br>
            <a href="#" class="btn btn-danger rounded font btn-lg">Tell Me More</a>
@@ -55,7 +52,7 @@
 
   <div class="container-fluid my-3">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-12 col-md-6 col-sm-6 ">
       <!-- <h2 class="text-center">Welcome Bootcamper!</h2>
         <h5 class="text-center"> We Are Trainer Of PHP Web Developer Bootcamp!!!</h5> -->
       </div>
@@ -64,7 +61,7 @@
   <div class="container-fluid">
     <div class="row">
       @foreach($trainers as $trainer) 
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card">
           <div class="card-body">
             <img class="card-img-top" src="{{$trainer->avatar}}" alt="">
@@ -83,16 +80,16 @@
 <div id="counter3">
   <div class="container p-5">
     <div class="row text-white text-center">
-<div class="col-lg-4 col-md-12 col-sm-12">
+<div class="col-lg-4 col-md-6 col-sm-12">
         <h3>3</h3>
         <p>Subjects</p>
       </div>
-<div class="col-lg-4 col-md-12 col-sm-12">
+<div class="col-lg-4 col-md-6 col-sm-12">
         <h1>10</h1>
         <p>Homeworks</p>
       </div>
 
-<div class="col-lg-4 col-md-12 col-sm-12">
+<div class="col-lg-4 col-md-6 col-sm-12">
         <h1>12</h1>
         <p>Exercises</p>
       </div>
@@ -104,7 +101,7 @@
   <hr>
   <div class="container" style="position: absolute; margin-left: 100px;">
     <div class="row">
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-6 col-sm-12">
         <ul class="list-unstyled">
           <li>Support</li>
           <li>About Us</li>
@@ -114,7 +111,7 @@
         </ul>
       </div>
 
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-6 col-sm-12">
         <ul class="list-unstyled">
           <li>Need Help?</li>
           <li>About Us</li>
@@ -125,7 +122,7 @@
       </div>
 
 
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="row">
           <div class="col-lg-12">
             <p>Contact List:<p>
@@ -143,7 +140,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
           <ul class="list-unstyled">
             <li class="font"><i class="fas fa-graduation-cap" style="color:gray;"></i> Learning Management System</li>
             <li>lms-batch14@org.com</li>
@@ -151,16 +148,12 @@
               <i class="fab fa-instagram" style="color:#C13584;"></i></li>    
             </ul>
           </div>
-
-
-
-
         </div>
 
 
         <div class="container">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
               <hr>
               <p class="text-center"><i class="fas fa-copyright" style="color:gray;"></i>    Myanmar IT Consulting || Web Developer Bootcamp</p>
             </div>

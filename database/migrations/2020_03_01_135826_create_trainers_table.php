@@ -24,17 +24,17 @@ class CreateTrainersTable extends Migration
             $table->text('portfolio');
             $table->timestamps();
             
-             $table->foreign('user_id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
+            //  $table->foreign('user_id')
+            //       ->references('id')->on('users')
+            //       ->onDelete('cascade');
 
-            $table->foreign('degree_id')
-                  ->references('id')->on('degrees')
-                  ->onDelete('cascade');
+            // $table->foreign('degree_id')
+            //       ->references('id')->on('degrees')
+            //       ->onDelete('cascade');
 
-            $table->foreign('course_id')
-                  ->references('id')->on('courses')
-                  ->onDelete('cascade');
+            // $table->foreign('course_id')
+            //       ->references('id')->on('courses')
+            //       ->onDelete('cascade');
 
         });
     }

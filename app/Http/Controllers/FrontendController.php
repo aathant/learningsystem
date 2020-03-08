@@ -73,8 +73,4 @@ class FrontendController extends Controller
         $users=User::All();
         return view('frontend.teacher',compact('trainers','mentors','users'));
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
 }
