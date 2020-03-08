@@ -12,6 +12,14 @@
 */
 Route::get('/','FrontendController@main')->name('main');
 
+Route::group([
+	//'name'='backend',
+	'middleware'=>'auth',
+	'prefix' => 'frontend',
+	//'namespace'=>'Backend'
+	],function() 
+{
+
 Route::get('/group_communication','FrontendController@group_communication')->name('group_communication');
 
 Route::get('/subject','FrontendController@subject_home')->name('subject');
@@ -20,7 +28,15 @@ Route::get('/detail_subject/{id}','FrontendController@Subject')->name('detail_su
 
 Route::get('/student','FrontendController@register')->name('frontendregister');
 
+<<<<<<< HEAD
 Route::get('/teacher','FrontendController@teacher')->name('teacher');
+=======
+Route::resource('students','StudentController');
+Route::resource('homeworks','HomeworkController');
+Route::resource('assignments','AssignmentController');
+});
+Auth::routes();
+>>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
 
 // Route::get('/group',function(){
 // 	return view('frontend.group');
@@ -50,8 +66,6 @@ Route::get('/contact',function(){
 // Route::resource('courses','CourseController');
 
 // Route::resource('mentors','MentorController');
-Route::resource('students','StudentController');
-Route::resource('homeworks','HomeworkController');
 Route::group([
 	//'name'='backend',
 	'middleware'=>'auth',
@@ -92,6 +106,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/show_batch','BatchController@show_batch')->name('show_batch');
 Route::post('/show_student','StudentController@show_student')->name('show_student');
+
+Route::get('/show_comment','FrontendController@show_comment')->name('show_comment');
+
+Route::get('/show_group','GroupController@show_group')->name('show_group');
 
 
 

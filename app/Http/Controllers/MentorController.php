@@ -56,7 +56,7 @@ class MentorController extends Controller
             "name"=>'required|min:5|max:191',
             "email"=>'required',
             "phone"=>'required',
-            "avatar"=>'required|mimes:jpeg,bmp,png',
+            // "avatar"=>'required|mimes:jpeg,bmp,png',
             "address"=>'required',
             "portfolio"=>'required'
         ]);

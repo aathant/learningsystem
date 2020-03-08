@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Assignment;
+use App\Homework;
 use App\User;
 
 class AssignmentController extends Controller
@@ -16,7 +17,9 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        //
+        $homework=Homework::All();
+        $user=User::All();
+        return view('frontend.group',compact('homework','user'));
     }
 
     /**
@@ -37,16 +40,19 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
+        // $homework=Homework::All();
         //validation //2
+        // dd($request);
         $request->validate([
             "comment"=>'required|min:1|max:191',
         ]);
 
         //Store Data //4
+        // $homework=new homework();
         $user=Auth::User();
         $assignment=new Assignment;
-        $assignment->post = request('post');
-        $assignment->homework_id= ;
+        $assignment->comment = request('comment');
+        $assignment->homework_id= request ('post');
         $assignment->user_id= $user->id;
 
          $assignment->save();//data INsert
