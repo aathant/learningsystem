@@ -30,11 +30,17 @@ Route::get('/student','FrontendController@register')->name('frontendregister');
 
 Route::get('/teacher','FrontendController@teacher')->name('teacher');
 
+<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('students','StudentController');
 Route::resource('marks','MarkController');
+=======
+Route::resource('students','StudentController');
+
+>>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
 Route::resource('homeworks','HomeworkController');
+
 Route::resource('assignments','AssignmentController');
 });
 Auth::routes();
@@ -46,7 +52,6 @@ Auth::routes();
 // Route::get('/teacher',function(){
 // 	return view('frontend.teacher');
 // });
-
 
 Route::get('/aboutus',function(){
 	return view('frontend.aboutus');

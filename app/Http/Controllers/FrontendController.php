@@ -51,9 +51,7 @@ class FrontendController extends Controller
     public function group_communication($value='')
     {
         $assignment=Assignment::All();
-        // dd($assignment);
         $homework=Homework::All();
-        // dd($homework);
         $user = Auth::User();
         return view('frontend.group',compact('homework','assignment','user'));
     } 
@@ -75,4 +73,8 @@ class FrontendController extends Controller
         $users=User::All();
         return view('frontend.teacher',compact('trainers','mentors','users'));
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
 }

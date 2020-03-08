@@ -18,22 +18,38 @@
 <body>
 	<!-- <div class="bg" style="background-color: #FAFAFA">
      -->
+     <div class="all">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand text-white" href="#"></a>
+        <a class="navbar-brand text-white font border rounded-pill border-warning p-2" href="#" style="font-size: x-large;">Khaing Myint San Oo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active px-4" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link px-4" href="#">My Subjects</a>
-            <a class="nav-item nav-link px-4" href="#">My Teachers/Mentors</a>
-            <a class="nav-item nav-link px-4" href="#">Events</a>
+            <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
+            <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
+            <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
           </div>
         </div>
       </nav>
+<<<<<<< HEAD
 
 
+=======
+<!-- <div class="container-fluid my-5">
+<div class="row">
+<div class=" offset-2 col-lg-8 offset-2 card">
+  <div class="card-body">
+    <h5 class="card-title">Name</h5>
+    <hr>
+    <p class="card-text">
+    	<textarea class="btn-block" placeholder="What is on your mind" style="border: none"></textarea><hr><br><a href="#" class="btn btn-info btn-block">Post</a></p>
+  </div>
+</div>
+</div>
+</div> -->
+>>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
 <div class="container-fluid my-5">
 	<div class="row">
 		<div class="offset-9 col-lg-3">
@@ -41,16 +57,20 @@
 		</div>
 	</div>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
   <div class="container-fluid">
     @foreach($homework as $row)
     <div class="row">
       <div class=" offset-2 col-lg-8 offset-2 card">
         <div class="card-body">
-          <h5 class="card-title">{{$row->user->name}}</h5>
+          <h5 class="card-title"><img src="{{asset('frontend/image/photo.png')}}" style="border-radius: 50%; width: 50px; height: 50px;">{{$row->user->name}}</h5>
           <hr>
           <p class="card-text">
            {{$row->post}}
+<<<<<<< HEAD
          </p>
            <hr><br>
            <p class="card-text">
@@ -60,6 +80,10 @@
         <i class="far fa-comment"></i> Comment</a>
             <button  class="btn btn-success comment" data-cmt="{{$row->id}}" data-toggle="modal" data-target="#comment_modal"><i class="far fa-comment"></i> Comment</button>
           </p>
+=======
+            <button  class="btn btn-success comment" data-cmt="{{$row->id}}" data-toggle="modal" data-target="#comment_modal"><i class="far fa-comment"></i> Comment</button>
+         </p>
+>>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
            </div>
          </div>
        </div>
@@ -86,6 +110,7 @@
       </div>
     </div>
   </div>
+</div>
 
   <hr>
   <div class="container" style="position: absolute; margin-left: 100px;">
@@ -131,12 +156,16 @@
 
         <div class="col-lg-3">
           <ul class="list-unstyled">
-            <li><i class="fas fa-graduation-cap"></i>LMS</li>
-            <li>learningmanagementsystem@org.com</li>
-            <li><i class="fab fa-facebook"></i> <i class="fab fa-twitter-square"></i> 
-              <i class="fab fa-instagram"></i></li>    
+            <li class="font"><i class="fas fa-graduation-cap" style="color:gray;"></i> Learning Management System</li>
+            <li>lms-batch14@org.com</li>
+            <li><i class="fab fa-facebook" style="color:#3b5998;"></i> <i class="fab fa-twitter-square" style="color:#00acee;"></i> 
+              <i class="fab fa-instagram" style="color:#C13584;"></i></li>    
             </ul>
           </div>
+
+
+
+
         </div>
 
 
@@ -144,19 +173,21 @@
           <div class="row">
             <div class="col-lg-12">
               <hr>
-              <p class="text-center"><i class="fas fa-copyright"></i>Myanmar IT Consulting || Web Developer Bootcamp</p>
+              <p class="text-center"><i class="fas fa-copyright" style="color:gray;"></i>    Myanmar IT Consulting || Web Developer Bootcamp</p>
             </div>
           </div>
         </div>
+
       </div>
 
 
 
       <div class="modal" tabindex="-1" role="dialog" id="post_modal">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" role="document" >
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">{{$user->name}}</h5>
+            <div class="modal-header bg-success">
+              <h5 class="modal-title"><img src="{{asset('frontend/image/photo.png')}}" style="border-radius: 50%; width: 50px; height: 50px;">
+                {{$user->name}}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -165,7 +196,7 @@
               @csrf
               <div class="modal-body">
                 <div class="form-group row">
-                  <p><textarea name="post" class="col-md-12 btn-block form-control" placeholder="What is on your mind......" style="border: none"></textarea></p>
+                  <p><textarea name="post" class="col-md-12 btn-block form-control" placeholder="What is on your mind......" style="border: none; width:400px; height: 100px; margin-left: 100px;"></textarea></p>
                 </div>
 
               </div>

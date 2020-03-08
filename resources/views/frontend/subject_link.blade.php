@@ -18,15 +18,15 @@
 <body>
 <div id="subject_link">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand text-white" href="#" style="border-color: blue;">{{$user->name}}</a>
+      <a class="navbar-brand text-white font border rounded-pill border-warning p-2" href="#" style="font-size: x-large;">{{$user->name}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
-          <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
+          <a class="nav-item nav-link px-4 text-white" href="#">Subjects</a>
+          <a class="nav-item nav-link px-4 text-white" href="#">Teachers/Mentors</a>
           <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
         </div>
       </div>
