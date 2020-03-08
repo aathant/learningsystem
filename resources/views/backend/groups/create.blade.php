@@ -35,18 +35,16 @@
 		</div>
 
 		<div class="form-group row">
+
 			<div class="col-6">
-				<label class="col-sm-12 col-form-label">Choose Mentor</label>
-				<select name="mentor" class="form-control" id="mentor" >
-				@foreach($mentor as $row)
-					<option value="{{$row->id}}">{{$row->user->name}}</option>
-				@endforeach
-				</select>
+				<label class="col-sm-12 col-form-label" for="inputName">Group Name
+				</label>
+				<input type="text" class="form-control" id="inputName" name="group">
 			</div>
 
 			<div class="col-6" id="oldstudent">
 				<label class="col-sm-12 col-form-label">Choose Students</label>
-				<select class="js-example-basic-multiple form-control" name="states[]" id="student" multiple="multiple" disabled="disabled">
+				<select class="js-example-basic-multiple form-control" id="student" multiple="multiple" disabled="disabled">
 					<option value=""></option>
 				</select>		
 			</div>
@@ -57,21 +55,15 @@
 				</select>		
 			</div>
 		</div>
-		<div class="form-group row">
-			<div class="col-6">
-				<label class="col-sm-12 col-form-label" for="inputName">Group Name
-				</label>
-				<input type="text" class="form-control" id="inputName" name="groupname">
-			</div>
-		</div>
 
 		<div class="form-group row">
 			<div class="col-12">
-				<button type="submit" class="btn btn-primary btn-block">Save register</button>
+				<button type="submit" class="btn btn-primary btn-block">Save</button>
 			</div>
 		</div>
 	</form>
 	</div>
+</div>
 </div>
 
 

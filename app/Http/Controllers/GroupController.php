@@ -9,6 +9,7 @@ use App\Student;
 use App\Batch;
 use App\Mentor;
 use DB;
+use Auth;
 use Illuminate\Support\Facades\URL;
 class GroupController extends Controller
 {
@@ -47,7 +48,26 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd(request('states'));
+        //validation //2
+        $request->validate([
+            "group"=>'required|min:1|max:191',
+        ]);
+
+        //Store Data //4
+        $user=Auth::user()->id;
+        $group=new Group;
+        $group->name=request ('group');
+        $group->course_id = request('course');
+        $group->batch_id= request('batch');
+        $group->mentor_id= $user;
+
+         $group->save();//data INsert
+        $group->students()->attach(request('states'));
+
+
+        //Return redirect//5
+         return redirect()->route('groups.index');
     }
 
     /**

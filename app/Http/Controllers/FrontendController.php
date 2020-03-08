@@ -10,12 +10,9 @@ use App\User;
 use App\Subject;
 use App\Batch;
 use App\Homework;
-<<<<<<< HEAD
 use App\Course;
 use App\Mentor;
-=======
 use App\Assignment;
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
 
 class FrontendController extends Controller
 {
@@ -38,7 +35,8 @@ class FrontendController extends Controller
         # code...
         $trainers=Trainer::All();
         $users=User::All();
-        return view('frontend.sub_home',compact('trainers','users'));
+        $user=Auth::User();
+        return view('frontend.sub_home',compact('trainers','users','user'));
     }
 
     public function Subject($id)
@@ -64,10 +62,11 @@ class FrontendController extends Controller
     {
         $id=request('id');
         $assignment=Assignment::where('homework_id',$id)->get();
+        // $user=$assignment;
+        // dd($user);
         return $assignment;
     }
 
-<<<<<<< HEAD
     public function teacher($value='')
     {
         # code...
@@ -76,6 +75,4 @@ class FrontendController extends Controller
         $users=User::All();
         return view('frontend.teacher',compact('trainers','mentors','users'));
     }
-=======
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
 }

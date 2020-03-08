@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Trainer;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $trainers=Trainer::All();
-        return view('frontend.sub_home',compact('trainers'));
+        $user=Auth::user();
+        return view('frontend.sub_home',compact('trainers','user'));
     }
 }

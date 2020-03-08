@@ -17,4 +17,8 @@ class Student extends Model
 	{
 		return $this->belongsTo('App\User');
 	}
+	public function group($value='')
+	{
+		return $this->hasOne('App\Group');
+	}
 }

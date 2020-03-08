@@ -8,9 +8,9 @@ class Assignment extends Model
 {
     protected $fillable=['comment','homework_id','user_id'];
 
-    public function user($value='')
+    public function users($value='')
     {
-    	return $this->belongsTo('App\User');
+    	return $this->belongsToMany('App\User');
     }
 
     public function homework($value='')

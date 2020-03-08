@@ -33,24 +33,7 @@
         </div>
       </nav>
 
-      
-  
 
-<<<<<<< HEAD
-<!-- <div class="container-fluid my-5">
-<div class="row">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	<textarea class="btn-block" placeholder="What is on your mind" style="border: none"></textarea><hr><br><a href="#" class="btn btn-info btn-block">Post</a></p>
-  </div>
-</div>
-</div>
-</div> -->
-=======
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
 <div class="container-fluid my-5">
 	<div class="row">
 		<div class="offset-9 col-lg-3">
@@ -59,10 +42,6 @@
 	</div>
 </div>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
   <div class="container-fluid">
     @foreach($homework as $row)
     <div class="row">
@@ -75,16 +54,12 @@
          </p>
            <hr><br>
            <p class="card-text">
-<<<<<<< HEAD
              This is testing comment
              <hr></p>
              <a href="#" class="btn btn-success font"  data-toggle="modal" data-target="#comment_modal">
         <i class="far fa-comment"></i> Comment</a>
-=======
             <button  class="btn btn-success comment" data-cmt="{{$row->id}}" data-toggle="modal" data-target="#comment_modal"><i class="far fa-comment"></i> Comment</button>
           </p>
-        
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
            </div>
          </div>
        </div>
@@ -201,11 +176,8 @@
             </form>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
     </div>
-=======
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
   </div>
 </div>
 
@@ -231,8 +203,6 @@
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-=======
 <script type="text/javascript">
 
   $(document).ready(function() {
@@ -247,15 +217,24 @@
           var html='';
           $.each(res,function(i,v)
           {
-            // console.log(v);
+             console.log(v);
+             var post=v.homework_id;
+             var routeURL="{{route('marks.store',':id')}}";
+             routeURL=routeURL.replace(':id',post);
             html+=`<div class="row">
           <div class="col-lg-12 card">
             <div class="card-text"><i class="fas fa-image"></i>${v.user_id}</div>
             <div class="card-text">
-              ${v.comment}</div>
+              ${v.comment}</div>`;            
+
+              html+='<form action="'+routeURL+'" method="post"> @csrf';
+
+              html+=`<input type="hidden" value="${v.homework_id}" name="post_id">
+              <input type="hidden" value="${v.id}" name="assignment_id">
             <div class="card-footer">
               <input type="text" name="mark">&nbsp;<button type="submit" id="mark"><i class="fas fa-check"></i></button>
             </div>
+            </form>
           </div>
         </div>`;
           })
@@ -269,6 +248,5 @@
   })
 
 </script>
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
     </body>
     </html>

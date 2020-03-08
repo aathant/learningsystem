@@ -28,15 +28,16 @@ Route::get('/detail_subject/{id}','FrontendController@Subject')->name('detail_su
 
 Route::get('/student','FrontendController@register')->name('frontendregister');
 
-<<<<<<< HEAD
 Route::get('/teacher','FrontendController@teacher')->name('teacher');
-=======
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('students','StudentController');
+Route::resource('marks','MarkController');
 Route::resource('homeworks','HomeworkController');
 Route::resource('assignments','AssignmentController');
 });
 Auth::routes();
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
 
 // Route::get('/group',function(){
 // 	return view('frontend.group');
@@ -100,7 +101,6 @@ Route::post('batch_student','GroupController@batch_student')->name('batch_studen
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->name('home');
 
