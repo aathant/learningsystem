@@ -8,7 +8,7 @@ class Assignment extends Model
 {
     protected $fillable=['comment','homework_id','user_id'];
 
-    public function users($value='')
+    public function user($value='')
     {
     	return $this->belongsToMany('App\User');
     }

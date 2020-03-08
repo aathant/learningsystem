@@ -43,4 +43,17 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Assignment');
     }
+    public function trainer($value='')
+    {
+        return $this->belongsToMany('App\Trainer');
+    }
+    public function student($value='')
+    {
+        return $this->belongsToMany('App\Student');
+    }
+
+    public function mentor($value='')
+    {
+        return $this->belongsToMany('App\Mentor');
+    }
 }

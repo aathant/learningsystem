@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Group_Communication</title>
+  <title>Group_Communication</title>
 
   <link rel="stylesheet" type="text/css" href="{{asset('frontend/style3.css')}}">
 
@@ -12,15 +12,11 @@
   <script type="text/javascript" src="{{asset('frontend/js/bootstrap.bundle.min.js')}}"></script>
 
   <link rel="stylesheet" type="text/css" href="{{asset('frontend/fontawesome/css/all.min.css')}}">
-
- <!--  <script type="text/javascript" src="{{asset('frontend/custom.js')}}"></script> -->
 </head>
 <body>
-	<!-- <div class="bg" style="background-color: #FAFAFA">
-     -->
      <div class="all">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand text-white font border rounded-pill border-warning p-2" href="#" style="font-size: x-large;">Khaing Myint San Oo</a>
+        <a class="navbar-brand text-white font border rounded-pill border-warning p-2" href="#" style="font-size: x-large;">{{$user->name}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,37 +26,50 @@
             <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
             <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
             <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
+
+            <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Authentication Links -->
+          @guest
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+          </li>
+          @if (Route::has('register'))
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+          </li>
+          @endif
+          @else
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+          </div>
+        </li>
+        @endguest
+      </ul>
+
           </div>
         </div>
       </nav>
-<<<<<<< HEAD
-
-
-=======
-<!-- <div class="container-fluid my-5">
-<div class="row">
-<div class=" offset-2 col-lg-8 offset-2 card">
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <hr>
-    <p class="card-text">
-    	<textarea class="btn-block" placeholder="What is on your mind" style="border: none"></textarea><hr><br><a href="#" class="btn btn-info btn-block">Post</a></p>
+<div class="container-fluid my-5">
+  <div class="row">
+    <div class="offset-9 col-lg-3">
+       <a href="#" class="btn btn-success rounded font btn-lg" data-toggle="modal" data-target="#post_modal"><i class="fas fa-plus"></i>Add Post</a>
+    </div>
   </div>
 </div>
-</div>
-</div> -->
->>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
-<div class="container-fluid my-5">
-	<div class="row">
-		<div class="offset-9 col-lg-3">
-			 <a href="#" class="btn btn-success rounded font btn-lg" data-toggle="modal" data-target="#post_modal"><i class="fas fa-plus"></i>Add Post</a>
-		</div>
-	</div>
-</div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
   <div class="container-fluid">
     @foreach($homework as $row)
     <div class="row">
@@ -70,20 +79,11 @@
           <hr>
           <p class="card-text">
            {{$row->post}}
-<<<<<<< HEAD
          </p>
            <hr><br>
            <p class="card-text">
-             This is testing comment
-             <hr></p>
-             <a href="#" class="btn btn-success font"  data-toggle="modal" data-target="#comment_modal">
-        <i class="far fa-comment"></i> Comment</a>
-            <button  class="btn btn-success comment" data-cmt="{{$row->id}}" data-toggle="modal" data-target="#comment_modal"><i class="far fa-comment"></i> Comment</button>
-          </p>
-=======
             <button  class="btn btn-success comment" data-cmt="{{$row->id}}" data-toggle="modal" data-target="#comment_modal"><i class="far fa-comment"></i> Comment</button>
          </p>
->>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
            </div>
          </div>
        </div>
@@ -162,13 +162,6 @@
               <i class="fab fa-instagram" style="color:#C13584;"></i></li>    
             </ul>
           </div>
-
-
-
-
-        </div>
-
-
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -177,7 +170,7 @@
             </div>
           </div>
         </div>
-
+        </div>
       </div>
 
 
@@ -196,7 +189,7 @@
               @csrf
               <div class="modal-body">
                 <div class="form-group row">
-                  <p><textarea name="post" class="col-md-12 btn-block form-control" placeholder="What is on your mind......" style="border: none; width:400px; height: 100px; margin-left: 100px;"></textarea></p>
+                  <p><textarea name="post" class="col-md-12" placeholder="What is on your mind......"></textarea></p>
                 </div>
 
               </div>
@@ -207,10 +200,9 @@
             </form>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
-  </div>
-</div>
+ 
 
 <div class="modal" tabindex="-1" role="dialog" id="comment_modal">
   <div class="modal-dialog" role="document">
@@ -248,7 +240,7 @@
           var html='';
           $.each(res,function(i,v)
           {
-             console.log(v);
+             // console.log(v.user->name);
              var post=v.homework_id;
              var routeURL="{{route('marks.store',':id')}}";
              routeURL=routeURL.replace(':id',post);
@@ -256,8 +248,7 @@
           <div class="col-lg-12 card">
             <div class="card-text"><i class="fas fa-image"></i>${v.user_id}</div>
             <div class="card-text">
-              ${v.comment}</div>`;            
-
+              ${v.comment}</div>`;     
               html+='<form action="'+routeURL+'" method="post"> @csrf';
 
               html+=`<input type="hidden" value="${v.homework_id}" name="post_id">
@@ -279,5 +270,5 @@
   })
 
 </script>
-    </body>
-    </html>
+</body>
+</html>

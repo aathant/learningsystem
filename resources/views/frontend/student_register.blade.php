@@ -191,9 +191,7 @@
 					</div>
 				</div>
 
-				<input type="hidden" name="bid" value="2">
-
-				<button type="submit" name="submit" class="btn btn-primary col-sm-12 text-center">Save Register</button>
+				<button type="submit" name="submit" class="btn btn-primary col-sm-12 text-center" href="{{route('login')}}">Save Register</button>
 
 			</form>
 		</div>

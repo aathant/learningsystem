@@ -53,7 +53,10 @@ class HomeworkController extends Controller
         $homework->marks= 0;
         $homework->start_time= 0;
         $homework->end_time= 0;
-        $homework->user_id= $user->name;
+        $homework->user_id= $user->trainer->id;
+        $homework->user_id= $user->mentor->id;
+        $homework->user_id= $user->student->id;
+        // $homework->user_id= $user->trainer->id;
 
          $homework->save();//data INsert
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mark;
 use App\Assignment;
 use App\Homework;
 use App\Student;
@@ -42,7 +43,7 @@ class MarkController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $request->validate(["mark"=>'required|min:1|max:191']);
         // dd($request);
         $homework_id=$request->post_id;
         $assignment_id=$request->assignment_id;
@@ -52,25 +53,30 @@ class MarkController extends Controller
         foreach ($trainer as $key => $value) {
             $trainer_id=$value['user_id'];
         }
-        // dd($trainer_id);
         $student=Assignment::Where('id','=',$assignment_id)->get();
         // dd($student);
         foreach ($student as $key => $value) {
-            $student_id=2;
+            $student_id=$value['user_id'];
         }
-
-
-        // $group=DB::Where('group_student','')
         $group = DB::table('group_student')
             ->join('groups', 'groups.id', '=', 'group_student.group_id')
             ->get();
         foreach ($group as $grou) {
-            dd($grou);
+            // dd($grou->mentor_id);
+            $mentor_id=$grou->mentor_id;
+            $group_id=$grou->group_id;
+            // dd($group_id);
         }
-        
-        
-        
+        $marks=new Mark();
+        $marks->mark=$mark;
+        $marks->homework_id=$homework_id;
+        $marks->assignment_id=$assignment_id;
+        $marks->student_id=$student_id;
+        $marks->trainer_id=$trainer_id;
+        $marks->mentor_id=$mentor_id;
+        $marks->group_id=$group_id;
 
+        $marks->save();  
 
         //Return redirect//5
          return redirect()->route('group_communication');

@@ -11,7 +11,6 @@
 |
 */
 Route::get('/','FrontendController@main')->name('main');
-
 Route::group([
 	//'name'='backend',
 	'middleware'=>'auth',
@@ -30,19 +29,16 @@ Route::get('/student','FrontendController@register')->name('frontendregister');
 
 Route::get('/teacher','FrontendController@teacher')->name('teacher');
 
-<<<<<<< HEAD
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('students','StudentController');
 Route::resource('marks','MarkController');
-=======
 Route::resource('students','StudentController');
 
->>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
 Route::resource('homeworks','HomeworkController');
 
 Route::resource('assignments','AssignmentController');
 });
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 // Route::get('/group',function(){

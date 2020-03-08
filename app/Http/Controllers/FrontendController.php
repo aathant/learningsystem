@@ -19,8 +19,9 @@ class FrontendController extends Controller
     public function main($value='')
     {
     	# code...
+        $user=Auth::user();
         $courses=Course::All();
-    	return view('frontend.main',compact('courses'));
+    	return view('frontend.main',compact('courses','user'));
     }
 
     public function register($value='')
@@ -73,8 +74,4 @@ class FrontendController extends Controller
         $users=User::All();
         return view('frontend.teacher',compact('trainers','mentors','users'));
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 273b8c944d2e8322fb2ad775eaa4baba5d8c21cd
 }
