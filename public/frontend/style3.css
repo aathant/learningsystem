@@ -13,7 +13,7 @@
   background: linear-gradient(to right, rgba(188, 219, 183, 0.5), rgba(103, 188, 223, 0.8)), url("image/cloud.jpg") center no-repeat;
   background-size: cover;
   position: relative;
-  height: 100vh;
+  height:100%;
   font-family: 'Open Sans', sans-serif;
 }
 

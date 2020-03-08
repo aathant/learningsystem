@@ -19,13 +19,13 @@ class CreateGroupStudentTable extends Migration
             $table->unsignedBigInteger('student_id');
             $table->timestamps();
 
-            $table->foreign('group_id')
-                  ->references('id')->on('groups')
-                  ->onDelete('cascade');
+            // $table->foreign('group_id')
+            //       ->references('id')->on('groups')
+            //       ->onDelete('cascade');
 
-            $table->foreign('student_id')
-                  ->references('id')->on('students')
-                  ->onDelete('cascade');
+            // $table->foreign('student_id')
+            //       ->references('id')->on('students')
+            //       ->onDelete('cascade');
         });
     }
 

@@ -34,13 +34,13 @@ class CreateStudentsTable extends Migration
             $table->unsignedBigInteger('batch_id');
             $table->timestamps();
 
-             $table->foreign('user_id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
+            //  $table->foreign('user_id')
+            //       ->references('id')->on('users')
+            //       ->onDelete('cascade');
                   
-            $table->foreign('batch_id')
-                  ->references('id')->on('batches')
-                  ->onDelete('cascade');
+            // $table->foreign('batch_id')
+            //       ->references('id')->on('batches')
+            //       ->onDelete('cascade');
         });
     }
 

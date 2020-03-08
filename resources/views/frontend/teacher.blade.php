@@ -29,10 +29,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link px-4 text-white" href="#">My Subjects</a>
-            <a class="nav-item nav-link px-4 text-white" href="#">My Teachers/Mentors</a>
-            <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
+            <a class="nav-item nav-link active px-4 text-white" href="{{route('subject')}}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link px-4 text-white" href="{{route('teacher')}}">Teachers/Mentors</a>
+            <a class="nav-item nav-link px-4 text-white" href="{{route('group_communication')}}">Events</a>
           </div>
         </div>
       </nav>

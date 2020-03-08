@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+ 
 class Homework extends Model
 {
     protected $fillable=['post','marks','start_time','end_time','user_id'];

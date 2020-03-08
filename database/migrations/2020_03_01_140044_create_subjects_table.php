@@ -22,9 +22,9 @@ class CreateSubjectsTable extends Migration
             $table->string('description');
             $table->timestamps();
 
-            $table->foreign('trainer_id')
-                  ->references('id')->on('trainers')
-                  ->onDelete('cascade');
+            // $table->foreign('trainer_id')
+            //       ->references('id')->on('trainers')
+            //       ->onDelete('cascade');
         });
     }
 

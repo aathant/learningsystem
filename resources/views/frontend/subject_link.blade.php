@@ -25,9 +25,10 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active px-4 text-white" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link px-4 text-white" href="#">Subjects</a>
+         <!--  <a class="nav-item nav-link px-4 text-white" href="#">Subjects</a> -->
           <a class="nav-item nav-link px-4 text-white" href="#">Teachers/Mentors</a>
           <a class="nav-item nav-link px-4 text-white" href="#">Events</a>
+          <!-- <a class="nav-item nav-link px-4 text-white" href="#">Logout</a> -->
         </div>
       </div>
     </nav>

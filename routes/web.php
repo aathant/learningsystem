@@ -29,8 +29,16 @@ Route::get('/student','FrontendController@register')->name('frontendregister');
 
 Route::get('/teacher','FrontendController@teacher')->name('teacher');
 
+<<<<<<< HEAD
 Route::resource('students','StudentController');
 Route::resource('marks','MarkController');
+=======
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('students','StudentController');
+Route::resource('marks','MarkController');
+
+>>>>>>> 6aa0482114ae1764115f094c5bd4f148d980ae77
 Route::resource('students','StudentController');
 
 Route::resource('homeworks','HomeworkController');
