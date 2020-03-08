@@ -44,10 +44,10 @@ class HomeworkController extends Controller
         $request->validate([
             "post"=>'required|min:1|max:191',
         ]);
-
+ 
         //Store Data //4
         $user=Auth::User();
-        dd($user);
+        // dd($user);
         $homework=new Homework;
         $homework->post = request('post');
         $homework->marks= 0;

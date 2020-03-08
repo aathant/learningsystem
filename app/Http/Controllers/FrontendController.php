@@ -10,12 +10,9 @@ use App\User;
 use App\Subject;
 use App\Batch;
 use App\Homework;
-<<<<<<< HEAD
 use App\Course;
 use App\Mentor;
-=======
 use App\Assignment;
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
 
 class FrontendController extends Controller
 {
@@ -53,9 +50,7 @@ class FrontendController extends Controller
     public function group_communication($value='')
     {
         $assignment=Assignment::All();
-        // dd($assignment);
         $homework=Homework::All();
-        // dd($homework);
         $user = Auth::User();
         return view('frontend.group',compact('homework','assignment','user'));
     } 
@@ -67,7 +62,6 @@ class FrontendController extends Controller
         return $assignment;
     }
 
-<<<<<<< HEAD
     public function teacher($value='')
     {
         # code...
@@ -76,6 +70,5 @@ class FrontendController extends Controller
         $users=User::All();
         return view('frontend.teacher',compact('trainers','mentors','users'));
     }
-=======
->>>>>>> d377564d395ae2935d844e5f351bc65c41f7cce0
+
 }
