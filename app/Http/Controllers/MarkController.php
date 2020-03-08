@@ -3,14 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Group;
-use App\Course;
-use App\Student;
-use App\Batch;
-use App\Mentor;
-use DB;
-use Illuminate\Support\Facades\URL;
-class GroupController extends Controller
+
+class MarkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +13,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups=Group::all();
-        return view('backend.groups.index',compact('groups'));
+        //
     }
 
     /**
@@ -29,14 +22,8 @@ class GroupController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-         $batches=Batch::all();
-         $courses=Course::all();
-         $students=Student::all();
-         $mentor=Mentor::All();
-         // dd($students);
-        return view('backend.groups.create',compact('courses','students','batches','mentor'));
-
+    {
+        //
     }
 
     /**
@@ -58,7 +45,7 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        return view('backend.groups.show');
+        //
     }
 
     /**
@@ -69,7 +56,7 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-       return view('backend.groups.edit');
+        //
     }
 
     /**
@@ -93,19 +80,5 @@ class GroupController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function course_batch(Request $request)
-    {
-        $id=request('id');
-        $batches=Batch::where('course_id',$id)->get();
-        return $batches;
-    }
-
-     public function batch_student(Request $request)
-    {
-        $id=request('id');
-        $students=Student::where('batche_id',$id)->get();
-        return $students;
     }
 }

@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" type="text/css" href="{{asset('frontend/fontawesome/css/all.min.css')}}">
 
-  <script type="text/javascript" src="{{asset('frontend/custom.js')}}"></script>
+ <!--  <script type="text/javascript" src="{{asset('frontend/custom.js')}}"></script> -->
 </head>
 <body>
 	<div class="bg" style="background-color: #FAFAFA">
@@ -67,23 +67,24 @@
           <hr>
           <p class="card-text">
            {{$row->post}}
+         </p>
            <hr><br>
            <p class="card-text">
-            <a href="#" class="btn btn-success font"  data-toggle="modal" data-target="#comment_modal">
-        <i class="far fa-comment"></i> Comment</a>
+            <button  class="btn btn-success comment" data-cmt="{{$row->id}}" data-toggle="modal" data-target="#comment_modal"><i class="far fa-comment"></i> Comment</button>
+          </p>
+        
            </div>
          </div>
        </div>
        @endforeach
      </div>
-   </div>
 
    <div id="counter1">
     <div class="container p-5">
       <div class="row text-white text-center">
         <div class="col-lg-4 col-md-12 col-sm-12">
           <h3>3</h3>
-          <p>Subjects</p>
+          <p>{{$user->name}}</p>
         </div>
         <div class="col-lg-4 col-md-12 col-sm-12">
           <h1>10</h1>
@@ -195,7 +196,6 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <!-- <h5 class="modal-title">{{$user->name}}</h5> -->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -203,28 +203,52 @@
       <form method="post" action="{{route('assignments.store')}}" enctype="multipart/form-data">
         @csrf
       <div class="modal-body">
-            <input type="hidden" name="post" value="{{$homework}}" >
+            <input type="hidden" name="post" value="" id="cmtpost">
         <p><textarea class="btn-block" name="comment" placeholder="Add Comment" style="border: none"></textarea></p>
          <button type="submit" class="btn btn-success"><i class="far fa-comment"></i>&nbsp;add</button>
       </div>
     </form>
-     <!--  <div class="modal-footer">
-      </div> -->
-      <div class="container-fluid">
-        @foreach($assignment as $row)
-        <div class="row">
-          <div class="col-lg-12 card">
-            <div class="card-text"><i class="fas fa-image"></i>{{$user->name}}</div>
-            <div class="card-text">{{$row->comment}}</div>
-            <div class="card-footer">
-              <input type="text" name="mark">&nbsp;<a href="#" class="btn-sm btn-danger"><i class="fas fa-check"></i></a>
-            </div>
-          </div>
-        </div>
-        @endforeach
+      <div class="container-fluid" id="comment">
+
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+   
+    $(".comment").click(function() {
+      
+     
+        var id=$(this).data('cmt');
+        // alert(id);
+        $.get('/show_comment',{id:id},function(res){
+          // console.log(res);
+          var html='';
+          $.each(res,function(i,v)
+          {
+            // console.log(v);
+            html+=`<div class="row">
+          <div class="col-lg-12 card">
+            <div class="card-text"><i class="fas fa-image"></i>${v.user_id}</div>
+            <div class="card-text">
+              ${v.comment}</div>
+            <div class="card-footer">
+              <input type="text" name="mark">&nbsp;<button type="submit" id="mark"><i class="fas fa-check"></i></button>
+            </div>
+          </div>
+        </div>`;
+          })
+
+        $('#comment').html(html);
+
+        })
+        $('#cmtpost').val(id);
+
+    })
+  })
+
+</script>
     </body>
     </html>

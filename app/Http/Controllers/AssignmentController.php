@@ -17,7 +17,9 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        //
+        $homework=Homework::All();
+        $user=User::All();
+        return view('frontend.group',compact('homework','user'));
     }
 
     /**
@@ -38,9 +40,9 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        $homework=Homework::All();
-        // dd($homework);
+        // $homework=Homework::All();
         //validation //2
+        // dd($request);
         $request->validate([
             "comment"=>'required|min:1|max:191',
         ]);

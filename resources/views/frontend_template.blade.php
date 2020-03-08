@@ -11,7 +11,7 @@
 
 	<link rel="stylesheet" type="text/css" href="{{asset('frontend/fontawesome/css/all.min.css')}}">
 
-	<script type="text/javascript" src="{{asset('frontend/custom.js')}}"></script>
+	<!-- <script type="text/javascript" src="{{asset('frontend/custom.js')}}"></script> -->
 </head>
 <body>
 	<div id="banner">

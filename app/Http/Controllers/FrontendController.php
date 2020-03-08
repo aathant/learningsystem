@@ -47,12 +47,18 @@ class FrontendController extends Controller
     public function group_communication($value='')
     {
         $assignment=Assignment::All();
+        // dd($assignment);
         $homework=Homework::All();
-        dd($homework->);
+        // dd($homework);
         $user = Auth::User();
-        // $id = User::find(Auth::User());
-        // dd($user->name);;
         return view('frontend.group',compact('homework','assignment','user'));
     } 
+
+     public function show_comment(Request $request)
+    {
+        $id=request('id');
+        $assignment=Assignment::where('homework_id',$id)->get();
+        return $assignment;
+    }
 
 }
